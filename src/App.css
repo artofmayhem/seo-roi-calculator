@@ -1,0 +1,15 @@
+.app {
+  background: "";
+}
+
+.app-header {
+  height: 34rem;
+  background-image: url("./assets/headerimage2.jpg");
+  margin-top: -4%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 40rem;
+}
