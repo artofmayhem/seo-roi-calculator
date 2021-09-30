@@ -32,7 +32,7 @@ export default function FormContainer() {
             "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
           }
         />
-        <h6 className={"text-lg"}>Conversion Rate: Traffic to Lead</h6>
+        <h6 className={"text-lg"}>Conversion Rate: Traffic to Lead %</h6>
         <input
           name={"conv_rate_TL"}
           type="number"
@@ -43,7 +43,7 @@ export default function FormContainer() {
             "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
           }
         />
-        <h6 className={"text-lg"}>Conversion Rate: Lead to Qualified Leads</h6>
+        <h6 className={"text-lg"}>Conversion Rate: Lead to Qualified Leads %</h6>
         <input
           name={"conv_rate_LQL"}
           type="number"
@@ -54,7 +54,7 @@ export default function FormContainer() {
             "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
           }
         />
-        <h6 className={"text-lg"}>Conversion Rate: Qualified Lead to Sale</h6>
+        <h6 className={"text-lg"}>Conversion Rate: Qualified Lead to Sale %</h6>
         <input
           name={"conv_rate_QLS"}
           type="number"
@@ -65,7 +65,7 @@ export default function FormContainer() {
             "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
           }
         />
-        <h6 className={"text-lg"}>Average Net Value of Sale</h6>
+        <h6 className={"text-lg"}>Average Net Value of Sale $</h6>
         <input
           name={"avg_net_value_sale"}
           type="number"
@@ -76,7 +76,7 @@ export default function FormContainer() {
             "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
           }
         />
-        <h6 className={"text-lg"}>Agency Costs</h6>
+        <h6 className={"text-lg"}>Agency Costs $</h6>
         <input
           name={"ag_cost"}
           type="number"
@@ -87,7 +87,7 @@ export default function FormContainer() {
             "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
           }
         />
-        <h6 className={"text-lg"}>In-House Costs</h6>
+        <h6 className={"text-lg"}>In-House Costs $</h6>
         <input
           name={"in_house_cost"}
           type="number"
