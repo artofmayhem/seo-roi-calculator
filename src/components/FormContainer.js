@@ -19,8 +19,8 @@ export default function FormContainer() {
     setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
   };
   return (
-    <div className={"w-screen h-auto my-20"}>
-      <form className="form-container flex flex-col text-2xl text-center">
+    <div className={"w-screen h-auto py-20 bg-blue-300 flex flex-row flex-wrap justify-center align-center"}>
+      <form className="flex flex-col text-2xl text-white text-center border-2 bg-gray-800 border-white w-1/4 py-10">
         <h6 className={"text-lg"}>Monthly Traffic Required</h6>
         <input
           name={"mtr"}
