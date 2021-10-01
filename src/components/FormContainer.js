@@ -367,7 +367,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-16 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-16 bg-gray-200 text-gray-800 text-xl mx-auto text-center"
               }
             >
               <h5>Leads from Traffic</h5>
@@ -384,7 +384,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 text-lg mx-auto text-center"
               }
             >
               <h5>Qualified Leads From Traffic</h5>
@@ -401,7 +401,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 text-lg mx-auto text-center"
               }
             >
               <h5>Sales From Qualified Leads</h5>
@@ -418,7 +418,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 text-xl mx-auto text-center"
               }
             >
               <h5>Cost Per Lead</h5>
@@ -437,7 +437,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 text-xl mx-auto text-center"
               }
             >
               <h5>Cost Per Qualified Lead</h5>
@@ -455,7 +455,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800  text-xl mx-auto text-center"
               }
             >
               <h5>Cost Per Sale</h5>
@@ -473,7 +473,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-xl text-center"
               }
             >
               <h5>Revenue From Sales</h5>
@@ -491,7 +491,7 @@ export default function FormContainer() {
           <div className={"flex flex-row justify-center align-center"}>
             <div
               className={
-                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 text-xl mx-auto text-center"
               }
             >
               <h5>Revenue (Less Cost)</h5>
