@@ -503,6 +503,27 @@ export default function FormContainer() {
             >
                 {costPerLead === null ? <h5>{revLessCost}</h5> : 
               <h5>${revLessCost}</h5>}
+
+              
+            </div>
+          </div>
+          <div className={"flex flex-row justify-center align-center"}>
+            <div
+              className={
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800  mx-auto text-center"
+              }
+            >
+              <h5>ROI</h5>
+            </div>
+            <div
+              className={
+                "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+              }
+            >
+                { roi === null ? <h5>{roi}</h5> : 
+              <h5>{roi}%</h5>}
+
+              
             </div>
           </div>
         </div>
