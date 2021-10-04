@@ -29,16 +29,16 @@ export default function FormContainer() {
   const [revLessCost, setRevLessCost] = useState();
   const [roi, setRoi] = useState();
 
-  console.log("form values: ", formValues);
+  // console.log("form values: ", formValues);
 
   const leadsTrafficHandler = (mtr, conRateTl) => {
     setLeadsTraffic(mtr / conRateTl);
-    console.log("leads traffic", leadsTraffic);
+    // console.log("leads traffic", leadsTraffic);
   };
 
   const qualifiedLeadsLeadsHandler = (mtr, conRateTl, conRateQls) => {
     setQualifiedLeadsFromLeads(mtr / conRateTl / conRateQls);
-    console.log("qualified from leads", qualifiedLeadsFromLeads);
+    // console.log("qualified from leads", qualifiedLeadsFromLeads);
   };
 
   const salesQualifiedLeadsHandler = (
@@ -48,12 +48,12 @@ export default function FormContainer() {
     conRateQls
   ) => {
     setSalesQualifiedLeads(mtr / conRateTl / conRateLql / conRateQls);
-    console.log("sales qualified leads", salesQualifiedLeads);
+    // console.log("sales qualified leads", salesQualifiedLeads);
   };
 
   const costPerLeadHandler = (mtr, conRateTl, agCost, inHouseCost) => {
-    setCostPerLead((agCost + inHouseCost) / (mtr / conRateTl));
-    console.log("cost per lead", costPerLead);
+    setCostPerLead(((agCost + inHouseCost) / (mtr / conRateTl)).toFixed(2));
+    // console.log("cost per lead", costPerLead);
   };
 
   const costPerQualifiedLeadHandler = (
@@ -64,13 +64,13 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setCostPerQualifiedLead(
-      (agCost + inHouseCost) / (mtr / conRateTl / conRateQls)
+      ((agCost + inHouseCost) / (mtr / conRateTl / conRateQls)).toFixed(2)  
     );
     // display in dollars and cents
-    console.log(
-      "cost per qualified lead",
-      Math.round(100 * costPerQualifiedLead) / 100
-    );
+    // console.log(
+    //   "cost per qualified lead",
+    //    (costPerQualifiedLead).toFixed(2)
+    // );
   };
 
   const costPerSaleHandler = (
@@ -83,9 +83,9 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setCostPerSale(
-      (agCost + inHouseCost) / (mtr / conRateTl / conRateLql / conRateQls)
+      (agCost + inHouseCost) / (mtr / conRateTl / conRateLql / conRateQls ).toFixed(2) 
     );
-    console.log("cost per sale", costPerSale);
+    // console.log("cost per sale", costPerSale);
   };
 
   const revFromSalesHandler = (
@@ -98,7 +98,7 @@ export default function FormContainer() {
     setRevFromSales(
       (mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale
     );
-    console.log("revenue from sales", revFromSales);
+    // console.log("revenue from sales", revFromSales);
   };
 
   const revLessCostHandler = (
@@ -114,7 +114,7 @@ export default function FormContainer() {
       (mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
         (agCost + inHouseCost)
     );
-    console.log("revenue less cost", revLessCost);
+    // console.log("revenue less cost", revLessCost);
   };
 
   const roiHandler = (
@@ -127,12 +127,12 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setRoi(
-      (((mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
+      ((((mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
         (agCost + inHouseCost)) /
         (agCost + inHouseCost)) *
-        100
+        100).toFixed(2)
     );
-    console.log("roi", roi);
+    // console.log("roi", roi);
   };
 
   const handleChange = (e) => {
@@ -421,7 +421,7 @@ export default function FormContainer() {
                 "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
               }
             >
-              <h5>Cost Per Lead</h5>
+              <h5>Cost Per Lead ($)</h5>
             </div>
             <div
               className={
@@ -430,7 +430,7 @@ export default function FormContainer() {
             >
               
              {costPerLead === null ? <h5>{costPerLead}</h5> : 
-              <h5>${costPerLead}0</h5>}
+              <h5>{costPerLead}</h5>}
             </div>
           </div>
 
@@ -440,7 +440,7 @@ export default function FormContainer() {
                 "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
               }
             >
-              <h5>Cost Per Qualified Lead</h5>
+              <h5>Cost Per Qualified Lead ($)</h5>
             </div>
             <div
               className={
@@ -448,7 +448,7 @@ export default function FormContainer() {
               }
             >
               {costPerLead === null ? <h5>{costPerQualifiedLead}</h5> : 
-              <h5>${costPerQualifiedLead}</h5>}
+              <h5>{costPerQualifiedLead}</h5>}
             </div>
           </div>
 
@@ -458,7 +458,7 @@ export default function FormContainer() {
                 "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
               }
             >
-              <h5>Cost Per Sale</h5>
+              <h5>Cost Per Sale ($)</h5>
             </div>
             <div
               className={
@@ -466,7 +466,7 @@ export default function FormContainer() {
               }
             >
               {costPerLead === null ? <h5>{costPerSale}</h5> : 
-              <h5>${costPerSale}</h5>}
+              <h5>{costPerSale}</h5>}
             </div>
           </div>
 
@@ -476,7 +476,7 @@ export default function FormContainer() {
                 "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
               }
             >
-              <h5>Revenue From Sales</h5>
+              <h5>Revenue From Sales ($)</h5>
             </div>
             <div
               className={
@@ -484,7 +484,7 @@ export default function FormContainer() {
               }
             >
                {costPerLead === null ? <h5>{revFromSales}</h5> : 
-              <h5>${revFromSales}</h5>}
+              <h5>{revFromSales}</h5>}
             </div>
           </div>
 
@@ -494,7 +494,7 @@ export default function FormContainer() {
                 "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800  mx-auto text-center"
               }
             >
-              <h5>Revenue (Less Cost)</h5>
+              <h5>Revenue ($ / Less Cost)</h5>
             </div>
             <div
               className={
@@ -502,7 +502,7 @@ export default function FormContainer() {
               }
             >
                 {costPerLead === null ? <h5>{revLessCost}</h5> : 
-              <h5>${revLessCost}</h5>}
+              <h5>{revLessCost}</h5>}
 
               
             </div>
@@ -513,7 +513,7 @@ export default function FormContainer() {
                 "flex align-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800  mx-auto text-center"
               }
             >
-              <h5>ROI</h5>
+              <h5>ROI (%)</h5>
             </div>
             <div
               className={
@@ -521,7 +521,7 @@ export default function FormContainer() {
               }
             >
                 { roi === null ? <h5>{roi}</h5> : 
-              <h5>{roi}%</h5>}
+              <h5>{roi}</h5>}
 
               
             </div>
