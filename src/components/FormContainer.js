@@ -32,12 +32,12 @@ export default function FormContainer() {
   // console.log("form values: ", formValues);
 
   const leadsTrafficHandler = (mtr, conRateTl) => {
-    setLeadsTraffic(mtr / conRateTl);
+    setLeadsTraffic((mtr / conRateTl).toFixed(2));
     // console.log("leads traffic", leadsTraffic);
   };
 
   const qualifiedLeadsLeadsHandler = (mtr, conRateTl, conRateQls) => {
-    setQualifiedLeadsFromLeads(mtr / conRateTl / conRateQls);
+    setQualifiedLeadsFromLeads((mtr / conRateTl / conRateQls).toFixed(2));
     // console.log("qualified from leads", qualifiedLeadsFromLeads);
   };
 
@@ -47,7 +47,7 @@ export default function FormContainer() {
     conRateLql,
     conRateQls
   ) => {
-    setSalesQualifiedLeads(mtr / conRateTl / conRateLql / conRateQls);
+    setSalesQualifiedLeads(((mtr / conRateTl / conRateLql / conRateQls)).toFixed(2));
     // console.log("sales qualified leads", salesQualifiedLeads);
   };
 
@@ -83,7 +83,7 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setCostPerSale(
-      (agCost + inHouseCost) / (mtr / conRateTl / conRateLql / conRateQls ).toFixed(2) 
+      ((agCost + inHouseCost) / (mtr / conRateTl / conRateLql / conRateQls )).toFixed(2)
     );
     // console.log("cost per sale", costPerSale);
   };
@@ -96,7 +96,7 @@ export default function FormContainer() {
     avgNetValueSale
   ) => {
     setRevFromSales(
-      (mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale
+      ((mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale).toFixed(2)
     );
     // console.log("revenue from sales", revFromSales);
   };
@@ -111,8 +111,8 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setRevLessCost(
-      (mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
-        (agCost + inHouseCost)
+      ((mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
+        (agCost + inHouseCost)).toFixed(2)
     );
     // console.log("revenue less cost", revLessCost);
   };
