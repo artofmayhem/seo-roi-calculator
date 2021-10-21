@@ -1,17 +1,19 @@
 body {
   overflow-x: hidden;
+  font-family: "Archer A", "Archer B";
+  font-style: normal;
+  font-weight: 500;
 }
 
 .app {
   background: #fff;
-  
 }
 
 .app-header {
   height: 34rem;
-  background-image: url('./assets/headerimage2.jpg');;
+  background-image: url("./assets/seo-header.jpg");
   background-size: cover;
-  background-position: center 20;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;

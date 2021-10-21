@@ -47,7 +47,9 @@ export default function FormContainer() {
     conRateLql,
     conRateQls
   ) => {
-    setSalesQualifiedLeads(((mtr / conRateTl / conRateLql / conRateQls)).toFixed(2));
+    setSalesQualifiedLeads(
+      (mtr / conRateTl / conRateLql / conRateQls).toFixed(2)
+    );
     // console.log("sales qualified leads", salesQualifiedLeads);
   };
 
@@ -64,7 +66,7 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setCostPerQualifiedLead(
-      ((agCost + inHouseCost) / (mtr / conRateTl / conRateQls)).toFixed(2)  
+      ((agCost + inHouseCost) / (mtr / conRateTl / conRateQls)).toFixed(2)
     );
     // console.log(
     //   "cost per qualified lead",
@@ -82,7 +84,10 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setCostPerSale(
-      ((agCost + inHouseCost) / (mtr / conRateTl / conRateLql / conRateQls )).toFixed(2)
+      (
+        (agCost + inHouseCost) /
+        (mtr / conRateTl / conRateLql / conRateQls)
+      ).toFixed(2)
     );
     // console.log("cost per sale", costPerSale);
   };
@@ -110,8 +115,10 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setRevLessCost(
-      ((mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
-        (agCost + inHouseCost)).toFixed(2)
+      (
+        (mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
+        (agCost + inHouseCost)
+      ).toFixed(2)
     );
     // console.log("revenue less cost", revLessCost);
   };
@@ -126,10 +133,12 @@ export default function FormContainer() {
     inHouseCost
   ) => {
     setRoi(
-      ((((mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
-        (agCost + inHouseCost)) /
-        (agCost + inHouseCost)) *
-        100).toFixed(2)
+      (
+        (((mtr / conRateTl / conRateQls / conRateLql) * avgNetValueSale -
+          (agCost + inHouseCost)) /
+          (agCost + inHouseCost)) *
+        100
+      ).toFixed(2)
     );
     // console.log("roi", roi);
   };
@@ -240,289 +249,304 @@ export default function FormContainer() {
 
   return (
     <div className={"flex flex-row flex-wrap"}>
-      <div
-        className={
-          " h-auto py-20 bg-black flex flex-row flex-wrap justify-center align-center"
-        }
-        style={{ width: "50%", minWidth: 375 }}
-      >
-        <form
-          className="flex flex-col justify-center items-center text-2xl text-white text-center border-2 bg-gray-800 border-white py-10"
-          style={{ width: "40vw", minWidth: 350 }}
-        >
-          <h6 className={"text-lg"}>Monthly Traffic Required</h6>
-          <input
-            name={"mtr"}
-            type="number"
-            onChange={handleChange}
-            value={Number(formValues.mtr)}
-            placeholder={"Monthly Traffic Required"}
-            className={
-              "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
-            }
-          />
-          <h6 className={"text-lg"}>Conversion Rate: Traffic to Lead %</h6>
-          <input
-            name={"conv_rate_TL"}
-            type="number"
-            onChange={handleChange}
-            value={Number(formValues.conv_rate_TL)}
-            placeholder={"Conversion Rate: Traffic to Lead"}
-            className={
-              "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
-            }
-          />
-          <h6 className={"text-lg"}>
-            Conversion Rate: Lead to Qualified Leads %
-          </h6>
-          <input
-            name={"conv_rate_LQL"}
-            type="number"
-            onChange={handleChange}
-            value={Number(formValues.conv_rate_LQL)}
-            placeholder={"Lead to Qualified Leads"}
-            className={
-              "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
-            }
-          />
-          <h6 className={"text-lg"}>
-            Conversion Rate: Qualified Lead to Sale %
-          </h6>
-          <input
-            name={"conv_rate_QLS"}
-            type="number"
-            onChange={handleChange}
-            value={Number(formValues.conv_rate_QLS)}
-            placeholder={"Qualified Lead to Sale"}
-            className={
-              "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
-            }
-          />
-          <h6 className={"text-lg"}>Average Net Value of Sale $</h6>
-          <input
-            name={"avg_net_value_sale"}
-            type="number"
-            onChange={handleChange}
-            value={Number(formValues.avg_net_value_sale)}
-            placeholder={"Monthly Traffic Required"}
-            className={
-              "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
-            }
-          />
-          <h6 className={"text-lg"}>Agency Costs $</h6>
-          <input
-            name={"ag_cost"}
-            type="number"
-            onChange={handleChange}
-            value={Number(formValues.ag_cost)}
-            placeholder={"Agency Cost"}
-            className={
-              "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
-            }
-          />
-          <h6 className={"text-lg"}>In-House Costs $</h6>
-          <input
-            name={"in_house_cost"}
-            type="number"
-            onChange={handleChange}
-            value={Number(formValues.in_house_cost)}
-            placeholder={"In House Cost"}
-            className={
-              "border-solid border-2 border-gray-600 my-2 p-4 w-72 bg-gray-400 text-black mx-auto text-center"
-            }
-          />
-          <button
-            className={
-              "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-6 rounded w-72"
-            }
-            onClick={handleSubmit}
-          >
-            Submit
-          </button>
-
-          <button
-            className={
-              "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-6 rounded w-72"
-            }
-            onClick={handleReset}
-          >
-            Reset
-          </button>
-        </form>
+      <div className={'w-1/2 text-center flex justify-center items-start mt-48'}>
+        <h3 className={'text-2xl'}>
+          Seo can be the most effective marketing tool for your business.
+        </h3>
       </div>
-      <div
-        className={
-          " h-auto py-20 bg-black flex flex-row flex-wrap justify-center align-center"
-        }
-        style={{ width: "50%", minWidth: 375 }}
-      >
+      <div className={'flex flex-row flex-wrap justify-center mx-auto w-1/2'}>
         <div
           className={
-            "text-center bg-gray-500 px-4 border-2 py-20 h-auto border-white"
+            "h-auto py-20 bg-white flex flex-row flex-wrap justify-center align-center"
           }
-          style={{ width: "35vw", minWidth: 350 }}
+          style={{ width: 365 }}
         >
-          <h2 className={"text-4xl mb-10 text-white "}>Results</h2>
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
+          <form
+            className="flex flex-col justify-start py-10 h-auto items-center text-lg text-white text-center bg-gray-600 border-gray-600"
+            style={{ width: "30vw", minWidth: 350 }}
+          >
+            <h2 className={"my-6 text-xl"}>Change your strategy in seconds</h2>
+            <h6 className={"text-base"}>Monthly Traffic Required</h6>
+            <input
+              name={"mtr"}
+              type="number"
+              onChange={handleChange}
+              value={Number(formValues.mtr)}
+              placeholder={"Monthly Traffic Required"}
               className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-16 bg-gray-200 text-gray-800  mx-auto text-center"
+                "border-solid border-2 border-gray-600 my-2 p-2 w-60 bg-gray-400 text-black mx-auto text-center"
               }
-            >
-              <h5>Leads from Traffic</h5>
-            </div>
-            <div
+            />
+            <h6 className={"text-base"}>Conversion Rate: Traffic to Lead %</h6>
+            <input
+              name={"conv_rate_TL"}
+              type="number"
+              onChange={handleChange}
+              value={Number(formValues.conv_rate_TL)}
+              placeholder={"Conversion Rate: Traffic to Lead"}
               className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-16 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                "border-solid border-2 border-gray-600 my-2 p-2 w-60 bg-gray-400 text-black mx-auto text-center"
               }
+            />
+            <h6 className={"text-base"}>
+              Conversion Rate: Lead to Qualified Leads %
+            </h6>
+            <input
+              name={"conv_rate_LQL"}
+              type="number"
+              onChange={handleChange}
+              value={Number(formValues.conv_rate_LQL)}
+              placeholder={"Lead to Qualified Leads"}
+              className={
+                "border-solid border-2 border-gray-600 my-2 p-2 w-60 bg-gray-400 text-black mx-auto text-center"
+              }
+            />
+            <h6 className={"text-base"}>
+              Conversion Rate: Qualified Lead to Sale %
+            </h6>
+            <input
+              name={"conv_rate_QLS"}
+              type="number"
+              onChange={handleChange}
+              value={Number(formValues.conv_rate_QLS)}
+              placeholder={"Qualified Lead to Sale"}
+              className={
+                "border-solid border-2 border-gray-600 my-2 p-2 w-60 bg-gray-400 text-black mx-auto text-center"
+              }
+            />
+            <h6 className={"text-base"}>Average Net Value of Sale $</h6>
+            <input
+              name={"avg_net_value_sale"}
+              type="number"
+              onChange={handleChange}
+              value={Number(formValues.avg_net_value_sale)}
+              placeholder={"Monthly Traffic Required"}
+              className={
+                "border-solid border-2 border-gray-600 my-2 p-2 w-60 bg-gray-400 text-black mx-auto text-center"
+              }
+            />
+            <h6 className={"text-base"}>Agency Costs $</h6>
+            <input
+              name={"ag_cost"}
+              type="number"
+              onChange={handleChange}
+              value={Number(formValues.ag_cost)}
+              placeholder={"Agency Cost"}
+              className={
+                "border-solid border-2 border-gray-600 my-2 p-2 w-60 bg-gray-400 text-black mx-auto text-center"
+              }
+            />
+            <h6 className={"text-base"}>In-House Costs $</h6>
+            <input
+              name={"in_house_cost"}
+              type="number"
+              onChange={handleChange}
+              value={Number(formValues.in_house_cost)}
+              placeholder={"In House Cost"}
+              className={
+                "border-solid border-2 border-gray-600 my-2 p-2 w-60 bg-gray-400 text-black mx-auto text-center"
+              }
+            />
+            <button
+              className={
+                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-6 rounded w-60"
+              }
+              onClick={handleSubmit}
             >
-              <h5>{leadsTraffic}</h5>
-            </div>
-          </div>
+              Submit
+            </button>
 
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
+            <button
               className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800  mx-auto text-center"
+                "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-6 rounded w-60"
               }
+              onClick={handleReset}
             >
-              <h5>Qualified Leads From Traffic</h5>
+              Reset
+            </button>
+          </form>
+        </div>
+        <div
+          className={
+            " h-auto py-20 bg-white flex flex-row flex-wrap justify-center align-center"
+          }
+          style={{ width: 365 }}
+        >
+          <div
+            className={"text-center bg-gray-500 px-4 py-20 h-auto "}
+            style={{ width: "35vw", minWidth: 350 }}
+          >
+            <h2 className={"text-4xl mb-10 text-white "}>Results</h2>
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60  bg-gray-200 text-gray-800  mx-auto text-center"
+                }
+              >
+                <h5>Leads from Traffic</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60  bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                <h5>{leadsTraffic}</h5>
+              </div>
             </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-              <h5>{qualifiedLeadsFromLeads}</h5>
-            </div>
-          </div>
 
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
-              }
-            >
-              <h5>Sales From Qualified Leads</h5>
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-200 text-gray-800  mx-auto text-center"
+                }
+              >
+                <h5>Qualified Leads From Traffic</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                <h5>{qualifiedLeadsFromLeads}</h5>
+              </div>
             </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-              <h5>{salesQualifiedLeads}</h5>
-            </div>
-          </div>
 
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
-              }
-            >
-              <h5>Cost Per Lead ($)</h5>
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-200 text-gray-800 mx-auto text-center"
+                }
+              >
+                <h5>Sales From Qualified Leads</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                <h5>{salesQualifiedLeads}</h5>
+              </div>
             </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-              
-             {costPerLead === null ? <h5>{costPerLead}</h5> : 
-              <h5>{costPerLead}</h5>}
-            </div>
-          </div>
 
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-2 text-sm w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
-              }
-            >
-              <h5>Cost Per Qualified Lead ($)</h5>
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-200 text-gray-800 mx-auto text-center"
+                }
+              >
+                <h5>Cost Per Lead ($)</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                {costPerLead === null ? (
+                  <h5>{costPerLead}</h5>
+                ) : (
+                  <h5>{costPerLead}</h5>
+                )}
+              </div>
             </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-              {costPerLead === null ? <h5>{costPerQualifiedLead}</h5> : 
-              <h5>{costPerQualifiedLead}</h5>}
-            </div>
-          </div>
 
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
-              }
-            >
-              <h5>Cost Per Sale ($)</h5>
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 text-sm w-60 bg-gray-200 text-gray-800 mx-auto text-center"
+                }
+              >
+                <h5>Cost Per Qualified Lead ($)</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                {costPerLead === null ? (
+                  <h5>{costPerQualifiedLead}</h5>
+                ) : (
+                  <h5>{costPerQualifiedLead}</h5>
+                )}
+              </div>
             </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-              {costPerLead === null ? <h5>{costPerSale}</h5> : 
-              <h5>{costPerSale}</h5>}
-            </div>
-          </div>
 
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800 mx-auto text-center"
-              }
-            >
-              <h5>Revenue From Sales ($)</h5>
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-200 text-gray-800 mx-auto text-center"
+                }
+              >
+                <h5>Cost Per Sale ($)</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                {costPerLead === null ? (
+                  <h5>{costPerSale}</h5>
+                ) : (
+                  <h5>{costPerSale}</h5>
+                )}
+              </div>
             </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-               {costPerLead === null ? <h5>{revFromSales}</h5> : 
-              <h5>{revFromSales}</h5>}
-            </div>
-          </div>
 
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800  mx-auto text-center"
-              }
-            >
-              <h5>Revenue ($ / Less Cost)</h5>
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-200 text-gray-800 mx-auto text-center"
+                }
+              >
+                <h5>Revenue From Sales ($)</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                {costPerLead === null ? (
+                  <h5>{revFromSales}</h5>
+                ) : (
+                  <h5>{revFromSales}</h5>
+                )}
+              </div>
             </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-                {costPerLead === null ? <h5>{revLessCost}</h5> : 
-              <h5>{revLessCost}</h5>}
 
-              
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-200 text-gray-800  mx-auto text-center"
+                }
+              >
+                <h5>Revenue ($ / Less Cost)</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                {costPerLead === null ? (
+                  <h5>{revLessCost}</h5>
+                ) : (
+                  <h5>{revLessCost}</h5>
+                )}
+              </div>
             </div>
-          </div>
-          <div className={"flex flex-row justify-center align-center"}>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-200 text-gray-800  mx-auto text-center"
-              }
-            >
-              <h5>ROI (%)</h5>
-            </div>
-            <div
-              className={
-                "flex items-center justify-center border-solid border-2 border-white my-2 py-4 w-60 h-20 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
-              }
-            >
-                { roi === null ? <h5>{roi}</h5> : 
-              <h5>{roi}</h5>}
-
-              
+            <div className={"flex flex-row justify-center align-center"}>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-200 text-gray-800  mx-auto text-center"
+                }
+              >
+                <h5>ROI (%)</h5>
+              </div>
+              <div
+                className={
+                  "flex items-center justify-center border-solid border-2 border-white my-2 py-2 w-60 bg-gray-100 text-gray-800 text-2xl mx-auto text-center"
+                }
+              >
+                {roi === null ? <h5>{roi}</h5> : <h5>{roi}</h5>}
+              </div>
             </div>
           </div>
         </div>
