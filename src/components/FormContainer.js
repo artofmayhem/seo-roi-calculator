@@ -250,7 +250,7 @@ export default function FormContainer() {
   return (
     <div className={"flex flex-row flex-wrap"}>
       <div className={'w-1/2 text-center flex justify-center items-center mt-48'}>
-        <h3 className={'text-2xl'}>
+        <h3 className={'text-3xl'}>
           Seo can be the most effective marketing tool for your business.
         </h3>
       </div>
