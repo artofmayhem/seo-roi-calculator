@@ -1,7 +1,6 @@
 export default function Nav() {
   return (  
-    <nav className="flex flex-row flex-wrap h-auto py-2 bg-white text-2xl text-gray-800 justify-evenly items-center" >
-        <a className="navbar-brand ml-16" href="https://azella.io">Azella Financial Services</a>
+    <nav className="flex flex-row flex-wrap h-auto py-2 bg-white text-2xl text-gray-800 justify-end items-center" >
         <div className="py-2">
             <ul className="flex flex-row flex-wrap justify-evenly align-center w-auto">
             <li className="mx-10">

@@ -254,7 +254,8 @@ export default function FormContainer() {
           Seo can be the most effective marketing tool for your business.
         </h3>
       </div>
-      <div className={'flex flex-row flex-wrap justify-center mx-auto w-1/2'}>
+      <div className={'flex flex-row flex-wrap justify-center mx-auto w-1/2'} style={{ width: "50%", minWidth: 365 }}>
+        
         <div
           className={
             "h-auto py-20 bg-white flex flex-row flex-wrap justify-center align-center"
